@@ -36,13 +36,6 @@ public class Loader {
                 String command = reader.readLine().trim();
 
                 if(command.equals("exit")) {
-                    Session session = beginSession();
-                    PhoneBook phoneBook = (PhoneBook) session.createQuery("FROM PhoneBook WHERE fio=Ли").list();
-
-//        Department dept = (Department) session.createQuery("FROM Department WHERE name=Отдел производства").list().get(0);
-//        session.delete(dept);
-                    System.out.println("Найден контакт с id = " + phoneBook.getId() + " " + phoneBook.getFio() + " " + phoneBook.getPhone());
-                    endSession(session);
                     System.out.println("До новых встреч!");
                     if (sessionFactory != null) {
                         sessionFactory.close();
